@@ -1,0 +1,614 @@
+/* ========================================
+   KSTU Student Portal Style
+   Kumasi Technical University Student Course Registration
+   ======================================== */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Color Variables - KSTU Style */
+:root {
+    --kstu-navy: #003366;
+    --kstu-dark: #002244;
+    --kstu-gold: #FFD700;
+    --kstu-yellow: #FFC107;
+    --kstu-white: #FFFFFF;
+    --kstu-light: #F5F5F5;
+    --kstu-gray: #E0E0E0;
+    --kstu-text: #333333;
+    --success: #28a745;
+    --error: #dc3545;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--kstu-light);
+    color: var(--kstu-text);
+    line-height: 1.6;
+}
+
+/* ========================================
+   TOP HEADER BAR
+   ======================================== */
+.top-header {
+    background-color: var(--kstu-navy);
+    color: var(--kstu-white);
+    padding: 0 30px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.university-name {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.student-name {
+    font-size: 14px;
+    color: var(--kstu-gray);
+}
+
+/* ========================================
+   SIDEBAR NAVIGATION (Text-based)
+   ======================================== */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 60px;
+    width: 250px;
+    height: calc(100vh - 60px);
+    background-color: var(--kstu-dark);
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.sidebar-menu {
+    padding: 20px 0;
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 15px 25px;
+    color: var(--kstu-gray);
+    text-decoration: none;
+    transition: all 0.3s;
+    border-left: 4px solid transparent;
+}
+
+.sidebar-menu a:hover {
+    background-color: var(--kstu-navy);
+    color: var(--kstu-white);
+    border-left-color: var(--kstu-gold);
+}
+
+.sidebar-menu a.active {
+    background-color: var(--kstu-navy);
+    color: var(--kstu-white);
+    border-left-color: var(--kstu-gold);
+}
+
+/* ========================================
+   MAIN CONTENT AREA
+   ======================================== */
+.main-content {
+    margin-left: 250px;
+    margin-top: 60px;
+    padding: 30px;
+    min-height: calc(100vh - 60px);
+}
+
+/* Page Title */
+.page-title {
+    color: var(--kstu-navy);
+    font-size: 26px;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--kstu-gold);
+}
+
+/* ========================================
+   LOGIN PAGE (Full Page Layout)
+   ======================================== */
+.login-page {
+    margin: 0;
+    padding: 0;
+}
+
+.login-page .top-header {
+    position: relative;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    padding: 40px 20px;
+}
+
+.login-box {
+    background-color: var(--kstu-white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 500px;
+    width: 100%;
+    border-top: 5px solid var(--kstu-gold);
+}
+
+.login-box h2 {
+    color: var(--kstu-navy);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+/* ========================================
+   FORMS
+   ======================================== */
+.form-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--kstu-gray);
+}
+
+.form-section:last-child {
+    border-bottom: none;
+}
+
+.form-section h3 {
+    color: var(--kstu-navy);
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--kstu-text);
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="date"],
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--kstu-gray);
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--kstu-navy);
+    outline: none;
+}
+
+/* Radio Buttons */
+.radio-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 8px;
+}
+
+/* Checkbox Grid */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: var(--kstu-light);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.checkbox-item:hover {
+    background-color: var(--kstu-gray);
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.checkbox-item label {
+    font-weight: normal;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* File Upload */
+.file-upload-group {
+    border: 2px dashed var(--kstu-navy);
+    padding: 40px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: var(--kstu-light);
+}
+
+.file-upload-group input[type="file"] {
+    margin-top: 15px;
+}
+
+.file-info {
+    font-size: 13px;
+    color: var(--kstu-text);
+    margin-top: 10px;
+}
+
+/* Submit Button */
+.btn-submit {
+    background-color: var(--kstu-navy);
+    color: var(--kstu-white);
+    padding: 14px 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: var(--kstu-dark);
+}
+
+.btn-logout {
+    background-color: var(--error);
+    color: var(--kstu-white);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+}
+
+/* ========================================
+   ALERT MESSAGES
+   ======================================== */
+.alert {
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* ========================================
+   DASHBOARD CARDS (No Images)
+   ======================================== */
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.dashboard-card {
+    background-color: var(--kstu-white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-left: 5px solid var(--kstu-gold);
+}
+
+.dashboard-card h3 {
+    color: var(--kstu-navy);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.dashboard-card .number {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--kstu-navy);
+}
+
+.dashboard-card .status {
+    font-size: 14px;
+    color: var(--success);
+    margin-top: 5px;
+}
+
+.dashboard-card .status.pending {
+    color: var(--kstu-yellow);
+}
+
+/* ========================================
+   PROFILE PAGE (No Decorative Images)
+   ======================================== */
+.profile-card {
+    background-color: var(--kstu-white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.profile-header {
+    background-color: var(--kstu-navy);
+    color: var(--kstu-white);
+    padding: 30px;
+    text-align: center;
+}
+
+.profile-header h2 {
+    color: var(--kstu-gold);
+    font-size: 24px;
+}
+
+.profile-body {
+    padding: 30px;
+}
+
+.profile-row {
+    display: flex;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--kstu-gray);
+}
+
+.profile-row:last-child {
+    border-bottom: none;
+}
+
+.profile-label {
+    font-weight: 600;
+    color: var(--kstu-navy);
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.profile-value {
+    color: var(--kstu-text);
+    flex-grow: 1;
+}
+
+.profile-courses {
+    margin-top: 10px;
+}
+
+.profile-courses ul {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+.profile-courses li {
+    padding: 8px 15px;
+    background-color: var(--kstu-light);
+    margin-bottom: 5px;
+    border-radius: 4px;
+    border-left: 3px solid var(--kstu-gold);
+}
+
+/* Profile Image Container */
+.profile-image-container {
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: var(--kstu-light);
+    border-radius: 8px;
+}
+
+.profile-image-container img {
+    max-width: 200px;
+    border-radius: 8px;
+    border: 3px solid var(--kstu-navy);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.main-footer {
+    background-color: var(--kstu-navy);
+    color: var(--kstu-white);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.main-footer p {
+    font-size: 14px;
+}
+
+.main-footer span {
+    color: var(--kstu-gold);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .main-content {
+        margin-left: 200px;
+    }
+    
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-row {
+        flex-direction: column;
+    }
+    
+    .profile-label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+/* ========================================
+   HERO SECTION (Home Page) - Clean Design
+   ======================================== */
+.hero-section {
+    background-color: var(--kstu-navy);
+    min-height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.hero-content {
+    text-align: center;
+    color: var(--kstu-white);
+    padding: 40px;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: var(--kstu-gold);
+}
+
+.hero-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.btn-hero {
+    display: inline-block;
+    background-color: var(--kstu-gold);
+    color: var(--kstu-navy);
+    padding: 16px 50px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 30px;
+    transition: all 0.3s;
+}
+
+.btn-hero:hover {
+    background-color: var(--kstu-white);
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.hero-feature {
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-feature p {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.profile-hero-section {
+    background-color: var(--kstu-navy);
+    min-height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    padding: 40px 20px;
+}
+
+.profile-welcome-card {
+    text-align: center;
+    color: var(--kstu-white);
+    max-width: 600px;
+}
+
+.profile-welcome-card h2 {
+    font-size: 36px;
+    color: var(--kstu-gold);
+    margin-bottom: 10px;
+}
+
+.profile-welcome-card p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.profile-welcome-card a {
+    color: var(--kstu-gold);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.profile-welcome-card a:hover {
+    color: var(--kstu-white);
+}
